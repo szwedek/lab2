@@ -3,16 +3,9 @@ package pl.edu.wsiz.components;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Data
-@SuperBuilder
-@EqualsAndHashCode
-public abstract class Employee {
+public interface Employee {
+    void Add(Employee o);
+    void Remove(Employee o);
 
-    protected String name;
-    protected String surname;
-    @ToString.Exclude
-    protected Float salary;
-
-    public abstract void Add(Employee o);
-    public abstract void Remove(Employee o);
+    Float getSalary();
 }

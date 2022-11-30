@@ -1,14 +1,16 @@
 package pl.edu.wsiz.components;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 @Data
-@SuperBuilder
-@ToString(callSuper=true)
-public class Worker extends Employee {
+@Builder
+@ToString
+public class Worker implements Employee {
 
+    protected String name;
+    protected String surname;
+    protected Float salary;
     @Override
     public void Add(Employee o) {
     }
